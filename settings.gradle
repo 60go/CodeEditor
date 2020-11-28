@@ -1,4 +1,4 @@
-/*******************************************************************************
+include ':pce' /*******************************************************************************
  *   Copyright 2020 Rosemoe
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,10 +14,5 @@
  *   limitations under the License.
  ******************************************************************************/
 
-include ':language-universal'
-include ':language-java'
-include ':language-s5d'
-include ':language-base'
-include ':editor'
-include ':app'
-rootProject.name='CodeEditor'
+include ':sample'
+rootProject.name='pce'
