@@ -32,16 +32,12 @@ import kotlin.coroutines.CoroutineContext
  */
 abstract class PluginSubInstance constructor(protected val editor: PceEditor, parentCoroutineContext: CoroutineContext) : CoroutineScope {
 
-    val _coroutineContext: CoroutineContext
+    private val _coroutineContext: CoroutineContext = CoroutineExceptionHandler { _, throwable ->
+        //TODO
+    }.plus(parentCoroutineContext)
 
     override val coroutineContext: CoroutineContext
         get() = _coroutineContext
-
-    init {
-        _coroutineContext = CoroutineExceptionHandler { _, throwable ->
-            //TODO
-        }.plus(parentCoroutineContext)
-    }
 
     companion object {
         /**
